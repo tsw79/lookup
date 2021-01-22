@@ -1,0 +1,399 @@
+* {
+  font-family: Arial, sans-serif;
+  color: #545454;
+}
+
+html, body {
+  margin: 0;
+  /* height: 100vh; */
+}
+body {
+  position: relative;
+}
+
+article {
+  min-height: 80vh;
+  display: flex;
+  flex-flow: column;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #FAFAFA;
+  border-bottom: 1px solid #EBEBEB;
+  z-index: 99;
+}
+header.sticky {
+  height: 70px;
+  padding-left: 0;
+  /* Box shadow */
+  width: 100%;
+  bottom: 1px;
+  /*transform:scale(.9);*/
+  box-shadow: 0px 0px 8px 2px #CCCCCC;
+}
+header,
+header.sticky {
+  /* Animate */
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+header section.search {
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+header section.search .logo-container {
+  width: 150px;
+  padding: 5px 20px;
+  box-sizing: border-box;
+}
+header section.search .logo-container img {
+  width: 100%;
+}
+header section.search .searchbar-container {
+  flex: 1;
+}
+header section.search .searchbar-container form {
+  margin: 15px 0;
+}
+header nav {
+  height: 70px;
+  justify-content: flex-end;
+  align-content: center;
+  flex-flow: nowrap !important;
+}
+
+form#searchbar input[type=text] {
+  width: 550px !important; /* Overwriting default width*/
+}
+
+
+/**
+ * Tabs container
+ */
+header .tabs-container {
+  margin-left: 150px;
+}
+header .tabs-container .tab-list {
+  width: 40%;
+  padding: 0;
+  margin: 0;
+}
+header .tabs-container .tab-list li {
+  display: inline-block;
+  padding-bottom: 5px;
+  color: #666666;
+  text-shadow: 1px 1px 1px #d3d3d3;
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: 15px;
+  height: 18px;
+}
+header .tabs-container .tab-list li a {
+  text-decoration: none;
+}
+header .tabs-container .tab-list li.active {
+  border-bottom: 2px solid #111111;
+}
+header .tabs-container .tab-list li.active a {
+  color: #111111;
+  font-weight: 700;
+}
+header .tabs-container .tab-list li.spacer {
+  opacity:0.5;
+}
+header .tabs-container,
+.site-results .result-container,
+main .results-count {
+  padding-left: 10px;
+}
+.tabs-container .tab-list .settings {
+  float: right;
+  
+} 
+.tabs-container .tab-list .settings a {
+  margin-bottom: 10px;
+} 
+.tabs-container .tab-list .settings a span.label {
+  display: inline-flex; 
+  vertical-align: top; 
+  padding-top: 3px;
+}
+
+
+main {
+  width: 1300px;
+  margin-top: 110px;
+}
+main .results-count {
+  font-size: 13px;
+  color: #808080;
+  margin-left: 150px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+
+/*
+* Site page -----------------------------------------------------------------------------------------------------------
+*/
+main .site-results-wrap .site-results {
+  display: flex;
+  flex-direction: column;
+  margin-left: 150px;
+  width: 620px;
+}
+
+.site-results .result-container {
+  border: 1px solid transparent; /* Avoid text jumping when hovering */
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+.site-results .result-container:hover {
+  border: 1px solid #DFDFDF;
+  border-radius: 5px;
+}
+.site-results .result-container .url {
+  margin-bottom: 5px;
+}
+.site-results .result-container .url a {
+  color: #006621;
+  font-size: 14px;
+  text-decoration: none;
+}
+.site-results .result-container .url a:hover {
+  text-decoration: underline;
+}
+.site-results .result-container .title {
+  margin: 0;
+}
+.site-results .result-container .title a {
+  color: #1A0DAB;
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 18px;
+}
+.site-results .result-container .title a:hover {
+  text-decoration: underline;
+}
+.site-results .result-container .description {
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+main .site-results-wrap .site-results-info {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  height: 100%;
+  padding: 0;
+  margin: 0 0 0 40px;
+  /* Make the element sticky */
+  position: sticky;
+  position: -webkit-sticky;
+  top: 90px;
+  /* Shading */
+  box-shadow: 5px 5px 8px 1px #DFDFDF;
+}
+main .site-results-wrap .site-results-info .container span.more {
+  display: none;
+}
+main .site-results-wrap .site-results-info .container span.more.show {
+  display: inline;
+}
+main .site-results-wrap .site-results-info .container {
+  border: 1px solid #DFDFDF;
+  border-radius: 5px;
+}
+main .site-results-wrap .site-results-info .wrap {
+  padding: 15px;
+}
+main .site-results-wrap .site-results-info section img {
+  align-self: baseline;
+  margin: 0 0 5px 5px;
+  width: 100px;
+  height: 100px;
+  float: right;
+}
+main .site-results-wrap .site-results-info section p {
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+}
+main .site-results-wrap .site-results-info section div.search-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #222222;
+  padding-bottom: 3px;
+}
+main .site-results-wrap .site-results-info section div.search-website {
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+main .site-results-wrap .site-results-info section div.search-website a {
+  color: #00278E;
+  text-decoration: none;
+}
+main .site-results-wrap .site-results-info section div.search-website a:hover {
+  text-decoration: underline;
+}
+main .site-results-wrap .site-results-info section div.about-site {
+  font-size: 14px;
+  font-weight: 500;
+  padding-bottom: 10px;
+}
+main .site-results-wrap .site-results-info section div.about-site a cite {
+  color: #00278E;
+  font-size: 14px;
+  font-weight: 700;
+}
+main .site-results-wrap .site-results-info section div.about-site a {
+  text-decoration: none;
+}
+main .site-results-wrap .site-results-info section div.about-site a:hover {
+  text-decoration: underline;
+}
+main .site-results-wrap .site-results-info section .detail {
+  font-size: 14px;
+  padding: 7px 5px 7px 0;
+  border-bottom: 1px solid #EAEAEA;
+}
+main .site-results-wrap .site-results-info section .detail span {
+  color: #222222;
+  font-weight: 600;
+}
+main .site-results-wrap .site-results-info section ul.profile-sites {
+  margin: 20px 0 10px 0;
+  padding: 0;
+  list-style-type: none;
+  overflow: hidden;
+}
+main .site-results-wrap .site-results-info section ul.profile-sites li {
+  float: left;
+  text-align: center;
+}
+main .site-results-wrap .site-results-info section ul.profile-sites li i {
+  font-size: 35px;
+}
+main .site-results-wrap .site-results-info section ul.profile-sites li a {
+  display: block;
+  text-decoration: none;
+  padding: 0 15px;
+  font-size: 12px;
+}
+main .site-results-wrap .site-results-info section ul.profile-sites li a:hover {
+  text-decoration: underline;
+}
+main .site-results-wrap .site-results-info .toggle {
+  display: block;
+  width: 100%;
+  height: 30px;
+  background: #FAFAFA;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top: 1px solid #DFDFDF;
+}
+main .site-results-wrap .site-results-info .toggle:hover {
+  cursor: pointer;
+  background-color: #F5F5F5;
+}
+main .site-results-wrap .site-results-info .toggle i {
+  line-height: 30px;
+  margin-left: 45%;
+  margin-right: 45%;
+  padding: 0 10px;
+}
+main .site-results-wrap .site-results-info .toggle .rotate {
+  -moz-transition: all .3s linear;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+}
+main .site-results-wrap .site-results-info .toggle .rotate.up {
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+
+/*
+* Images page ---------------------------------------------------------------------------------------------------------
+*/
+main .img-grid {
+  margin: 20px;
+}
+main .img-grid .item {
+  position: relative;
+}
+main .img-grid .item img {
+  max-width: 200px;
+  min-width: 50px;
+  visibility: hidden;
+}
+main .img-grid .item .details {
+  visibility: hidden;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  overflow: hidden;
+  background-color: rgba(0,0,0,0.8);
+  color: #FFF;
+  font-size: 11px;
+  padding: 3px;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+main .img-grid .item:hover .details {
+  visibility: visible;
+}
+
+
+/*
+* Pagination ----------------------------------------------------------------------------------------------------------
+*/
+.pagination-container {
+  width: 770px;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  margin: 25px 0;
+}
+.page-buttons {
+  display: flex;
+}
+.pagenum-container img {
+  height: 37px;
+}
+.pagenum-container,
+.pagenum-container a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+.page-number {
+  color: #000;
+  font-size: 13px;
+}
+a .page-number {
+  color: #4285F4;
+}
+
+
+/* Overriding commons.css footer */
+footer {
+  justify-content: flex-start !important;
+}
+
+/* Override position of the sidenav's close button */
+.sidenav .closebtn {
+  top: 15px !important;
+}

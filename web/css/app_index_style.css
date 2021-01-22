@@ -1,0 +1,63 @@
+/*
+ * Author: Tharwat
+ */
+
+/* Site Defaults */
+:root {
+  --content-width: 1000px;
+}
+* {
+  font-family: Arial, sans-serif;
+  color: #545454;
+}
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FFFFFF;
+}
+
+/* Index layout */
+header {
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  background: #f7f7f7;
+}
+header nav {
+  display: flex;
+  height: 50px;
+}
+main {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+main .wrapper {
+  min-width: var(--content-width);
+}
+
+/* Logo and Search (Actual search styling at the bottom) */
+main .wrapper section.search-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .wrapper section.search-block .searchbar-container {
+  margin-top: 15px;
+}
+main .wrapper section.search-block .logo-container {
+  width: 220px;
+  text-align: center;
+}
+.logo-container img {
+  width: 100%;
+}
+
+/* Footer */
+footer.wrap {
+  min-width: var(--content-width) !important;
+ }

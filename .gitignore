@@ -1,0 +1,5 @@
+# Ignore cache
+_docs/
+
+# Ignore all text files
+*.txt

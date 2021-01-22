@@ -1,0 +1,85 @@
+/* Button to open the menu */
+div.sidenav-btn {
+  display: flex;
+  justify-self: center;
+  font-size: 22px;
+  cursor: pointer;
+  width: 100%;
+  border: 1px solid transparent;
+}
+div.sidenav-btn:hover {
+  border-radius: 2.8px;
+  border: 1px solid #999;
+  background: #DFDFDF;
+  color: #FFF;
+}
+
+/* Sidenav menu */
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #FFFFFF;
+  border-left: 1px solid #DFDFDF;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 20px;
+}
+.sidenav a {
+  padding: 5px 10px 0 0;
+  text-decoration: none;
+  color: #888888;
+  display: block;
+}
+.sidenav a:hover {
+  color: #333333;
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 3px;
+  right: 8px;
+  font-size: 30px;
+  margin-left: 50px;
+}
+
+
+/* Sidenav links */
+
+.sidenav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+}
+.sidenav li {
+  padding: 5px;
+}
+.sidenav li.title {
+  padding: 25px 0 10px 20px;
+  margin: 0;
+  color: #888888;
+  font-size: 12px;
+}
+.sidenav li a {
+  display: block;
+  color: #333333;
+  padding: 5px 20px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.sidenav li a:hover {
+  background-color: #555;
+  color: white;
+  border-radius: 2px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}

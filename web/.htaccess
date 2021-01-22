@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+
+	# Rewrite the url if it is not a valid files
+	RewriteCond %{REQUEST_FILENAME} !-f
+
+	# Rewrite the url if it not a valid directory
+	RewriteCond %{REQUEST_FILENAME} !-d
+
+	# the URI after index.php is assigned to $_GET variable
+	RewriteRule ^(.*)$ index.php?url=$1
+</IfModule>
+
+#RewriteCond %{REQUEST_URI} !\.(?:css|js|jpe?g|gif|png)$ [NC]
+#RewriteRule ^([a-zA-Z0-9\-\_\/]*)$ index.php?p=$1
