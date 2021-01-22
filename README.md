@@ -1,4 +1,4 @@
-<p style="padding: 10px 0;">
+<p style="padding: 3px; border: 1px solid #ccc; border-radius: 2.8px;">
   <img src="./web/img/docs/Screenshot1.png" />
 </p>
 
